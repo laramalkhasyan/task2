@@ -1,0 +1,16 @@
+<div>
+  <h6>Add new servers or blueprints!</h6>
+  <p>Server Name</p>
+  <input type="text" [(ngModel)]="serverName">
+  <p>Server Content</p>
+  <input type="text" [(ngModel)]="serverContent">
+  <div class="buttons">
+    <button (click)="addServer('red')">Add Server</button>
+    <button (click)="addServer('blue')">Add Server Blueprint</button>
+  </div>
+
+  <div *ngFor="let item of server">
+    <h5>{{item.name}}</h5>
+    <p [ngClass]="{'red': item.color =='red','blue':item.color == 'blue'}">{{item.content}}</p>
+  </div>
+</div>
